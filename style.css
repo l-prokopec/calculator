@@ -1,0 +1,149 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Verdana", "Geneva", sans-serif;
+  background: linear-gradient(135deg, #f1f2f6, #dfe4ea);
+  color: #1b1f24;
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.calculator {
+  width: min(360px, 92vw);
+  background: #f9fafc;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 18px 40px rgba(16, 24, 40, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.display {
+  background: #1f232a;
+  color: #f7f9fb;
+  font-size: 2.2rem;
+  text-align: right;
+  padding: 18px 16px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  letter-spacing: 0.03em;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "ac ac divide multiply"
+    "seven eight nine minus"
+    "four five six plus"
+    "one two three equal"
+    "zero zero comma equal";
+  gap: 10px;
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 1.1rem;
+  background: #e9edf3;
+  color: #1b1f24;
+  cursor: pointer;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.08);
+}
+
+.btn--op {
+  background: #ffd166;
+}
+
+.btn--action {
+  background: #ef476f;
+  color: #fff;
+}
+
+.btn--wide {
+  font-size: 1.15rem;
+}
+
+.btn[data-key="ac"] {
+  grid-area: ac;
+}
+
+.btn[data-key="divide"] {
+  grid-area: divide;
+}
+
+.btn[data-key="multiply"] {
+  grid-area: multiply;
+}
+
+.btn[data-key="minus"] {
+  grid-area: minus;
+}
+
+.btn[data-key="plus"] {
+  grid-area: plus;
+}
+
+.btn[data-key="equal"] {
+  grid-area: equal;
+  background: #118ab2;
+  color: #fff;
+}
+
+.btn[data-key="comma"] {
+  grid-area: comma;
+}
+
+.btn[data-key="0"] {
+  grid-area: zero;
+}
+
+.btn[data-key="1"] {
+  grid-area: one;
+}
+
+.btn[data-key="2"] {
+  grid-area: two;
+}
+
+.btn[data-key="3"] {
+  grid-area: three;
+}
+
+.btn[data-key="4"] {
+  grid-area: four;
+}
+
+.btn[data-key="5"] {
+  grid-area: five;
+}
+
+.btn[data-key="6"] {
+  grid-area: six;
+}
+
+.btn[data-key="7"] {
+  grid-area: seven;
+}
+
+.btn[data-key="8"] {
+  grid-area: eight;
+}
+
+.btn[data-key="9"] {
+  grid-area: nine;
+}
