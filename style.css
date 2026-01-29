@@ -7,7 +7,7 @@
 body {
   margin: 0;
   font-family: "Verdana", "Geneva", sans-serif;
-  background: linear-gradient(135deg, #f1f2f6, #dfe4ea);
+  background: linear-gradient(135deg, #f1f2f6, #7e8681);
   color: #1b1f24;
 }
 
@@ -146,4 +146,54 @@ body {
 
 .btn[data-key="9"] {
   grid-area: nine;
+}
+
+.btn{
+  transition: transform 80ms ease, box-shadow 120ms ease, filter 120ms ease;
+  transform: translateY(0) scale(1);
+}
+
+.btn:active{
+  transform: translateY(1px) scale(0.98);
+  filter: brightness(0.95);
+}
+
+.btn:hover{
+  transform: translateY(-1px);
+}
+
+.btn:focus-visible{
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.btn{
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, currentColor 10%, transparent 11%) center/0 0 no-repeat;
+  opacity: 0.18;
+  transition: background-size 260ms ease, opacity 500ms ease;
+}
+
+.btn:active::after{
+  background-size: 180% 180%;
+  opacity: 0.10;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .btn{ transition: none; }
+  .btn::after{ transition: none; }
+}
+
+.display{
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 2.5rem; /* výchozí */
+  transition: font-size 120ms ease;
 }
