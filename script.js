@@ -148,3 +148,43 @@ keys.addEventListener("click", (e) => {
     setDisplay(secondNum);
   }
 });
+
+window.addEventListener("keydown", (e) => {
+  let key = null;
+
+  if (e.key >= "0" && e.key <= "9") {
+    key = e.key;
+  } else {
+    switch (e.key) {
+      case "+":
+        key = "plus";
+        break;
+      case "-":
+        key = "minus";
+        break;
+      case "*":
+        key = "multiply";
+        break;
+      case "/":
+        key = "divide";
+        break;
+      case "Enter":
+      case "=":
+        key = "equal";
+        break;
+      case ".":
+      case ",":
+        key = "comma";
+        break;
+      case "Delete":
+        key = "ac";
+        break;
+      default:
+        return;
+    }
+  }
+
+  e.preventDefault();
+  document.querySelector(`[data-key="${key}"]`)?.click();
+});
+
